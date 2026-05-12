@@ -1,0 +1,19 @@
+{
+  "name": "miq-bot",
+  "version": "1.0.0",
+  "description": "Make it a Quote bot for Fluxer",
+  "type": "module",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --watch bot.js"
+  },
+  "dependencies": {
+    "@fluxerjs/core": "^1.3.1",
+    "@napi-rs/canvas": "^0.1.65",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
