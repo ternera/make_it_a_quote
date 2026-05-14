@@ -72,11 +72,8 @@ export async function generateQuote({ text, displayName, tag, avatarUrl }) {
   }
 
   const fade = ctx.createLinearGradient(FADE_START, 0, FADE_END, 0);
-  fade.addColorStop(0.00, 'rgba(0,0,0,0)');
-  fade.addColorStop(0.20, 'rgba(0,0,0,0.2)');
-  fade.addColorStop(0.50, 'rgba(0,0,0,0.6)');
-  fade.addColorStop(0.85, 'rgba(0,0,0,0.95)');
-  fade.addColorStop(1.00, 'rgba(0,0,0,1)');
+  fade.addColorStop(0, 'rgba(0,0,0,0)');
+  fade.addColorStop(1, 'rgba(0,0,0,1)');
   ctx.fillStyle = fade;
   ctx.fillRect(FADE_START, 0, FADE_END - FADE_START, CANVAS_H);
   ctx.fillStyle = '#000';
@@ -114,7 +111,7 @@ export async function generateQuote({ text, displayName, tag, avatarUrl }) {
   ctx.fillStyle = 'rgba(100,100,100,0.75)';
   ctx.textAlign = 'right';
   ctx.textBaseline = 'bottom';
-  ctx.fillText('Make it a Quote', CANVAS_W - 20, CANVAS_H - 16);
+  ctx.fillText('Make_it_a_Quote#0313', CANVAS_W - 20, CANVAS_H - 16);
 
   return canvas.toBuffer('image/png');
 }
