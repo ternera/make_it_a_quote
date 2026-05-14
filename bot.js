@@ -40,11 +40,16 @@ client.on(Events.MessageCreate, async (message) => {
     : '';
 
   try {
+    const botUser = client.user;
+    const botDiscriminator = botUser.discriminator && botUser.discriminator !== '0'
+      ? `#${botUser.discriminator}`
+      : '';
     const imageBuffer = await generateQuote({
       text,
       displayName: targetUser.displayName ?? targetUser.username,
       tag: `${targetUser.username}${discriminator}`,
       avatarUrl: targetUser.displayAvatarURL({ size: 512 }),
+      botTag: `${botUser.username}${botDiscriminator}`,
     });
     await message.reply({ files: [{ name: 'quote.png', data: imageBuffer }] });
   } catch (err) {
