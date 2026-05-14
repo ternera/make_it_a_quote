@@ -58,7 +58,7 @@ function baseFontSize(len) {
   return 26;
 }
 
-export async function generateQuote({ text, displayName, tag, avatarUrl }) {
+export async function generateQuote({ text, displayName, tag, avatarUrl, botTag = 'miq-bot' }) {
   const canvas = createCanvas(CANVAS_W, CANVAS_H);
   const ctx = canvas.getContext('2d');
 
@@ -111,7 +111,7 @@ export async function generateQuote({ text, displayName, tag, avatarUrl }) {
   ctx.fillStyle = 'rgba(100,100,100,0.75)';
   ctx.textAlign = 'right';
   ctx.textBaseline = 'bottom';
-  ctx.fillText('Make_it_a_Quote#0313', CANVAS_W - 20, CANVAS_H - 16);
+  ctx.fillText(botTag, CANVAS_W - 20, CANVAS_H - 16);
 
   return canvas.toBuffer('image/png');
 }
