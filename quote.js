@@ -100,12 +100,8 @@ export async function generateQuote({ text, displayName, tag, avatarUrl, botTag 
 
   y += 28;
   ctx.font = `28px ${FONT}`;
-  ctx.fillText(`- ${displayName}`, cx, y);
-
-  y += 38;
-  ctx.font = `22px ${FONT}`;
-  ctx.fillStyle = 'rgba(170,170,170,0.85)';
-  ctx.fillText(tag, cx, y);
+  ctx.fillStyle = '#fff';
+  ctx.fillText(`- ${tag}`, cx, y);
 
   ctx.font = `16px ${FONT}`;
   ctx.fillStyle = 'rgba(100,100,100,0.75)';
