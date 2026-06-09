@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://web.fluxer.app/oauth2/authorize?client_id=1503854312091857983&scope=bot&permissions=101376"><img src="make_it_a_quote.png" width="150"/>
+  <a href="https://web.fluxer.app/oauth2/authorize?client_id=1503854312091857983&scope=bot&permissions=101376"><img src="make_it_a_quote.png" width="150"/></a>
 </p>
 
 <p align="center">
-  <strong>Click here to invite the bot to your community</strong></a>
+  <a href="https://web.fluxer.app/oauth2/authorize?client_id=1503854312091857983&scope=bot&permissions=101376"><strong>Click here to invite the bot to your community</strong></a>
 </p>
 
 # Selfhosting
