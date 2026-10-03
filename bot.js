@@ -1,12 +1,16 @@
 import 'dotenv/config';
 import { Client, Events } from '@fluxerjs/core';
-import { generateQuote } from './quote.js';
+import { generateQuote, quoteInit } from './quote.js';
+import { fontCheck } from './font.js';
 
 const TOKEN = process.env.FLUXER_BOT_TOKEN;
 if (!TOKEN) {
   console.error('FLUXER_BOT_TOKEN is not set.');
   process.exit(1);
 }
+
+await fontCheck();
+quoteInit();
 
 const client = new Client({ intents: 0 });
 

@@ -1,4 +1,5 @@
-import { createCanvas, loadImage } from "@napi-rs/canvas";
+import { createCanvas, GlobalFonts, loadImage } from "@napi-rs/canvas";
+import { getFontList } from "./font.js";
 
 const CANVAS_W = 1200;
 const CANVAS_H = 630;
@@ -7,7 +8,18 @@ const FADE_START = 200;
 const FADE_END = 500;
 const TEXT_X = 540;
 const TEXT_MAX_W = CANVAS_W - TEXT_X - 50;
-const FONT = '"Segoe UI", Arial, sans-serif';
+let FONT = "";
+
+export function quoteInit() {
+  let font_name = [];
+  const font_list = getFontList();
+  for (const font of font_list) {
+    GlobalFonts.registerFromPath(font.path, font.name);
+    font_name.push(font.name);
+  }
+  font_name.push("sans-serif");
+  FONT = font_name.join(", ");
+}
 
 function breakWord(ctx, word, maxWidth) {
   const segments = [];
