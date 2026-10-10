@@ -9,10 +9,12 @@ if (!TOKEN) {
   process.exit(1);
 }
 
+const API_URL = process.env.FLUXER_API_URL;
+
 await fontCheck();
 quoteInit();
 
-const client = new Client({ intents: 0 });
+const client = API_URL.length <= 0 ? new Client() : await Client.fromDiscovery(API_URL.toString())
 
 client.on(Events.Ready, () => console.log('miq-bot online'));
 
