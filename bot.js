@@ -14,10 +14,10 @@ const API_URL = process.env.FLUXER_API_URL;
 await fontCheck();
 quoteInit();
 
-const client =
-  API_URL.length <= 0
-    ? new Client()
-    : await Client.fromDiscovery(API_URL.toString());
+const clientOptions = { waitForGuilds: true };
+const client = !API_URL
+  ? new Client(clientOptions)
+  : await Client.fromDiscovery(API_URL.toString(), clientOptions);
 
 client.on(Events.Ready, () =>
   console.log(`miq-bot online in ${client.guilds.size} guilds`),
